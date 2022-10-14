@@ -80,10 +80,11 @@ st.header('You can upload free text column with "Remarks" name')
 #
 # st.write(df1)
 uploaded_file = st.file_uploader("Choose a file")
-df =pd.read_excel(uploaded_file)
-df= df.astype(str)
-col = ['Journey Name', 'Team Name', 'Form Number', 'NPS Rating', 'Remarks', 'Sub Categories', 'Sentiment']
-df_final =pd.DataFrame(columns=col)
+if uploaded_file is not None:
+    df =pd.read_excel(uploaded_file)
+    df= df.astype(str)
+    col = ['Journey Name', 'Team Name', 'Form Number', 'NPS Rating', 'Remarks', 'Sub Categories', 'Sentiment']
+    df_final =pd.DataFrame(columns=col)
 
 
 # st.write(df)
